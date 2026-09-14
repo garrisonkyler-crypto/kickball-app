@@ -113,6 +113,10 @@ img{display:block;max-width:100%}
 .hero-art img{
   position:relative;z-index:1;
   width:100%;height:auto;
+  /* The artwork ships on a solid black square. Feather the outer edge so it
+     melts into the page instead of cutting a rectangle out of the glow. */
+  -webkit-mask-image:radial-gradient(closest-side circle at 50% 50%,#000 88%,transparent 100%);
+  mask-image:radial-gradient(closest-side circle at 50% 50%,#000 88%,transparent 100%);
 }
 .hero-copy{position:relative;z-index:3}
 
