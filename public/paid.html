@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You're locked in — Raider Kickball Classic</title>
+<meta name="description" content="Payment received for the Raider Kickball Classic at Andrews High School.">
+<meta name="theme-color" content="#000000">
+<meta name="robots" content="noindex">
+<link rel="icon" href="raiders.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Yellowtail&display=swap">
+<style>
+:root{
+  --ink:#000000;
+  --paper:#F4F3EF;
+  --red:#E32B22;
+  --red-deep:#9E1610;
+  --blue:#1D6FE0;
+  --smoke:#969DAA;
+  --line:rgba(244,243,239,.13);
+  --display:"Anton","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --script:"Yellowtail","Brush Script MT",cursive;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--ink);color:var(--paper);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;line-height:.9}
+p{margin:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:1}
+.glow{
+  position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(50vw 44vw at 50% 22%, rgba(227,43,34,.28), transparent 68%),
+    radial-gradient(46vw 40vw at 78% 78%, rgba(29,111,224,.20), transparent 66%);
+}
+.wrap{
+  position:relative;z-index:2;flex:1;
+  max-width:660px;margin:0 auto;padding:clamp(30px,7vw,70px) clamp(20px,5vw,40px);
+  display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,3vw,26px);
+}
+.mark{display:flex;align-items:center;gap:12px}
+.mark img{height:44px;width:auto}
+.mark span{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);line-height:1.5}
+.mark b{display:block;color:var(--paper);font-size:.72rem;letter-spacing:.14em}
+
+.tick{
+  width:70px;height:70px;display:grid;place-items:center;
+  background:var(--red);color:#fff;font-size:2.3rem;line-height:1;
+  box-shadow:6px 6px 0 var(--red-deep);
+}
+h1{font-size:clamp(2.4rem,9vw,4.4rem);text-transform:uppercase;letter-spacing:-.01em}
+.script{
+  font-family:var(--script);color:var(--red);line-height:1;display:inline-block;
+  transform:rotate(-4deg);font-size:clamp(1.6rem,5.5vw,2.8rem);margin-top:6px;
+}
+.receipt{
+  display:flex;gap:10px 26px;flex-wrap:wrap;align-items:baseline;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:16px 0;font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--smoke);
+}
+.receipt b{color:var(--paper);font-family:var(--display);font-size:1.15rem;letter-spacing:.03em}
+.lede{color:#D2D5DC;font-size:clamp(1rem,2vw,1.12rem);max-width:48ch}
+.lede b{color:var(--paper)}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+li{position:relative;padding-left:24px;color:#C6CAD3}
+li::before{
+  content:"";position:absolute;left:0;top:9px;width:10px;height:10px;
+  background:var(--blue);transform:rotate(45deg);
+}
+li b{color:var(--paper)}
+.btn{
+  align-self:flex-start;font-family:var(--display);font-size:.95rem;letter-spacing:.05em;
+  text-transform:uppercase;padding:13px 24px;text-decoration:none;
+  background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px rgba(244,243,239,.26);
+}
+.btn:hover{box-shadow:inset 0 0 0 2px var(--paper)}
+footer{
+  position:relative;z-index:2;border-top:1px solid var(--line);
+  padding:22px clamp(20px,5vw,40px) 40px;max-width:660px;margin:0 auto;width:100%;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;color:var(--smoke);line-height:1.9;
+}
+footer a{color:var(--paper);text-decoration:none;border-bottom:2px solid var(--red)}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.wrap > *{animation:rise .5s ease both}
+.wrap > *:nth-child(2){animation-delay:.06s}
+.wrap > *:nth-child(3){animation-delay:.12s}
+.wrap > *:nth-child(4){animation-delay:.18s}
+.wrap > *:nth-child(5){animation-delay:.24s}
+.wrap > *:nth-child(6){animation-delay:.30s}
+.wrap > *:nth-child(7){animation-delay:.36s}
+@media (prefers-reduced-motion:reduce){
+  .wrap > *{animation:none}
+  #confetti{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+<canvas id="confetti"></canvas>
+
+<div class="wrap">
+  <div class="mark">
+    <img src="raiders.png" alt="Andrews High School Red Raiders">
+    <span><b>Andrews High School</b>TWA Centennial Scholars</span>
+  </div>
+
+  <div class="tick" aria-hidden="true">&#10003;</div>
+
+  <div>
+    <h1>Payment<br>received</h1>
+    <div class="script">You're locked in</div>
+  </div>
+
+  <div class="receipt">
+    <span>Paid <b>$10</b></span>
+    <span>Entry <b>1 Player</b></span>
+    <span>Event <b>Sat Oct 10</b></span>
+  </div>
+
+  <p class="lede">Your spot on the field is held. <b>Nothing else to do</b> — we will send your team color before game day.</p>
+
+  <ul>
+    <li><b>Saturday, October 10</b> &mdash; first kick at 1:00 PM, Andrews baseball field.</li>
+    <li><b>Watch for your color.</b> We build the eight teams after Oct 2 and send yours to the contact you registered with.</li>
+    <li><b>Wear it head to toe.</b> Best-dressed team gets called out at the back lot.</li>
+  </ul>
+
+  <a class="btn" href="./">Back to the event</a>
+</div>
+
+<footer>
+  Questions? <a href="https://instagram.com/twacentennial_scholars">@twacentennial_scholars</a><br>
+  Every dollar funds the Centennial Scholars Christmas Giveaway.
+</footer>
+
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('confetti');
+  var ctx = c.getContext('2d');
+  var w, h, bits = [], start = Date.now(), DURATION = 2600;
+  var colors = ['#E32B22', '#1D6FE0', '#F4F3EF'];
+
+  function size(){ w = c.width = innerWidth; h = c.height = innerHeight; }
+  size();
+  addEventListener('resize', size);
+
+  for (var i = 0; i < 130; i++){
+    bits.push({
+      x: w / 2 + (Math.random() - 0.5) * w * 0.5,
+      y: h * 0.28 + (Math.random() - 0.5) * 60,
+      vx: (Math.random() - 0.5) * 9,
+      vy: Math.random() * -11 - 3,
+      s: 4 + Math.random() * 7,
+      r: Math.random() * Math.PI,
+      vr: (Math.random() - 0.5) * 0.3,
+      col: colors[(Math.random() * colors.length) | 0]
+    });
+  }
+
+  function frame(){
+    var t = Date.now() - start;
+    ctx.clearRect(0, 0, w, h);
+    var fade = t > DURATION - 700 ? Math.max(0, (DURATION - t) / 700) : 1;
+    bits.forEach(function(b){
+      b.vy += 0.32;
+      b.x += b.vx; b.y += b.vy; b.r += b.vr;
+      ctx.save();
+      ctx.globalAlpha = fade;
+      ctx.translate(b.x, b.y);
+      ctx.rotate(b.r);
+      ctx.fillStyle = b.col;
+      ctx.fillRect(-b.s / 2, -b.s / 2, b.s, b.s * 0.6);
+      ctx.restore();
+    });
+    if (t < DURATION) requestAnimationFrame(frame);
+    else ctx.clearRect(0, 0, w, h);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

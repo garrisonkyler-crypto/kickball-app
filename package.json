@@ -1,0 +1,10 @@
+{
+  "name": "raider-kickball-classic",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Registration, payment and roster system for the Raider Kickball Classic",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

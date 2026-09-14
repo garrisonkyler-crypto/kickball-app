@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kickball tournament at Andrews High School, Saturday October 10, 1-7 PM. A TWA Centennial Scholars fundraiser for the Christmas Giveaway.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Raider Kickball Classic">
+<meta property="og:description" content="Kickball tournament at Andrews High School, Saturday October 10, 1-7 PM. A TWA Centennial Scholars fundraiser for the Christmas Giveaway.">
+<meta property="og:image" content="scholars.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="raiders.png">
+<title>Raider Kickball Print Kit</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Yellowtail&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{
+  --ink:#0A0A0D;
+  --red:#E32B22;
+  --blue:#1D6FE0;
+  --blue-deep:#0F3E86;
+  --paper:#FFFFFF;
+  --panel:#EFF2F7;
+  --grey:#5A6474;
+  --display:"Anton","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --script:"Yellowtail","Brush Script MT",cursive;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:#1B1F27;font-family:var(--body);color:var(--ink);
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+img{display:block}
+
+.toolbar{max-width:8.5in;margin:0 auto;padding:26px 18px 10px;color:#DCE3EE}
+.toolbar h1{font-family:var(--display);font-size:1.5rem;margin:0 0 8px;color:#fff;font-weight:400;letter-spacing:.02em;text-transform:uppercase}
+.toolbar p{margin:0 0 6px;font-size:.9rem;line-height:1.55;color:#B6C1D3;max-width:64ch}
+.toolbar b{color:#fff}
+.toolbar .qrtarget{margin-top:14px;font-size:.8rem;color:#8D98AB}
+.toolbar .qrtarget code{font-family:var(--mono);color:#DCE3EE;word-break:break-all}
+.toolbar .go{
+  display:inline-block;margin-top:12px;font-family:var(--display);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.05em;background:var(--red);color:#fff;
+  padding:12px 24px;border:0;cursor:pointer;box-shadow:4px 4px 0 #8E120D;
+}
+
+.sheet{
+  width:8.5in;height:11in;background:var(--paper);
+  margin:18px auto;position:relative;overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,.5);
+  display:flex;flex-direction:column;
+}
+.pad{padding:.42in .45in 0}
+
+/* ---------- header ---------- */
+.top{display:flex;align-items:center;gap:.12in;flex:none}
+.top .mark{height:.62in;width:auto;flex:none}
+.top .who b{display:block;font-family:var(--display);font-size:.135in;letter-spacing:.035em;line-height:1.15;text-transform:uppercase}
+.top .who span{display:block;font-family:var(--mono);font-size:.082in;letter-spacing:.17em;text-transform:uppercase;color:var(--grey);margin-top:.02in}
+.top .pres{
+  margin-left:auto;text-align:right;font-family:var(--mono);font-size:.078in;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--blue);font-weight:700;line-height:1.65;
+}
+
+/* ---------- title ---------- */
+.title{flex:none}
+.t-sm{font-family:var(--display);text-transform:uppercase;color:var(--blue);letter-spacing:.19em;line-height:1}
+.t-big{
+  font-family:var(--display);text-transform:uppercase;color:var(--ink);
+  letter-spacing:.002em;line-height:.78;
+}
+.t-script{font-family:var(--script);color:var(--red);line-height:1;display:inline-block;transform:rotate(-4deg)}
+
+/* ---------- band ---------- */
+.band{flex:none;background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(3,1fr)}
+.band div{padding:.13in .15in;border-right:1px solid rgba(255,255,255,.2)}
+.band div:last-child{border-right:0}
+.band dt{font-family:var(--mono);font-size:.07in;letter-spacing:.17em;text-transform:uppercase;color:#93A4C0;margin-bottom:.04in}
+.band dd{margin:0;font-family:var(--display);letter-spacing:.01em;line-height:1.08;text-transform:uppercase}
+
+/* ---------- scan ---------- */
+.scan{display:flex;align-items:center;gap:.26in;border:3px solid var(--ink);padding:.19in;flex:none}
+.qr{flex:none;line-height:0;background:#fff}
+.qr img,.qr canvas{display:block;width:100%;height:100%}
+.scan-copy{display:flex;flex-direction:column;gap:.07in;min-width:0}
+.scan-copy .kicker{font-family:var(--display);text-transform:uppercase;color:var(--red);letter-spacing:.01em;line-height:.88}
+.scan-copy p{margin:0;color:#333B49;line-height:1.4}
+.scan-copy .due{font-family:var(--display);text-transform:uppercase;color:var(--ink);letter-spacing:.02em}
+
+/* ---------- prices + facts ---------- */
+.money{display:grid;grid-template-columns:1fr 1fr;gap:.14in;flex:none}
+.price{border:2px solid var(--blue);padding:.13in .16in;background:var(--panel);display:flex;align-items:baseline;gap:.12in}
+.price b{font-family:var(--display);color:var(--blue-deep);line-height:1}
+.price span{font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:.08in;flex:none}
+.facts li{position:relative;padding-left:.21in;line-height:1.42;color:#222934}
+.facts li::before{content:"";position:absolute;left:0;top:.07in;width:.095in;height:.095in;background:var(--red)}
+.facts b{font-weight:700}
+
+/* ---------- footer band ---------- */
+.foot{
+  margin-top:auto;flex:none;background:#000;color:#fff;
+  display:flex;align-items:center;gap:.2in;padding:.16in .45in;
+}
+.foot img{height:.95in;width:auto;flex:none}
+.foot .give{font-family:var(--display);text-transform:uppercase;line-height:1.1;letter-spacing:.01em}
+.foot .give em{font-style:normal;color:var(--red)}
+.foot .reach{margin-left:auto;text-align:right;font-family:var(--mono);color:#B9C2D2;line-height:1.7;letter-spacing:.06em}
+.foot .reach b{display:block;color:#fff;font-family:var(--display);font-weight:400;letter-spacing:.03em}
+
+/* ---------- full-page scale ---------- */
+.full .top{margin-bottom:.2in}
+.full .t-sm{font-size:.3in}
+.full .t-big{font-size:1.3in;margin-top:.02in}
+.full .t-script{font-size:.44in;margin:.02in 0 0 .06in}
+.full .band{margin-top:.18in}
+.full .band dd{font-size:.185in}
+.full .scan{margin-top:.2in}
+.full .qr{width:2.6in;height:2.6in}
+.full .scan-copy .kicker{font-size:.5in}
+.full .scan-copy p{font-size:.13in}
+.full .scan-copy .due{font-size:.15in}
+.full .money{margin-top:.18in}
+.full .price b{font-size:.38in}
+.full .price span{font-size:.096in}
+.full .facts{margin-top:.16in;font-size:.125in;margin-bottom:.14in}
+.full .foot img{height:.85in}
+.full .foot .give{font-size:.16in;max-width:3.4in}
+.full .foot .reach{font-size:.084in}
+.full .foot .reach b{font-size:.118in}
+
+/* ---------- half sheets ---------- */
+.halves{display:block}
+.half{height:5.5in;width:8.5in;display:flex;flex-direction:column;position:relative}
+.half .pad{padding:.34in .38in 0}
+.cutline{position:absolute;left:0;right:0;top:5.5in;height:0;border-top:1px dashed #9AA7BB;z-index:5}
+.cutmark{
+  position:absolute;top:5.5in;right:.1in;transform:translateY(-50%);z-index:6;
+  font-family:var(--mono);font-size:6.5pt;letter-spacing:.14em;text-transform:uppercase;
+  color:#9AA7BB;background:#fff;padding:0 4px;
+}
+.half .top{margin-bottom:.12in}
+.half .top .mark{height:.38in}
+.half .top .who b{font-size:.1in}
+.half .top .who span{font-size:.062in}
+.half .top .pres{font-size:.06in}
+.half .t-sm{font-size:.19in}
+.half .t-big{font-size:.76in}
+.half .t-script{font-size:.26in;margin-left:.04in}
+.half .band{margin-top:.11in}
+.half .band dd{font-size:.118in}
+.half .band dt{font-size:.058in}
+.half .scan{margin-top:.12in;padding:.11in;border-width:2px;gap:.16in}
+.half .qr{width:1.5in;height:1.5in}
+.half .scan-copy .kicker{font-size:.29in}
+.half .scan-copy p{font-size:.093in}
+.half .scan-copy .due{font-size:.105in}
+.half-prices{display:flex;gap:.08in;font-family:var(--display);font-size:.135in;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.03em}
+.half-prices span{background:var(--panel);border:1.5px solid var(--blue);padding:.05in .1in}
+.half .foot{padding:.1in .38in;gap:.14in}
+.half .foot img{height:.55in}
+.half .foot .give{font-size:.105in;max-width:2.9in}
+.half .foot .reach{font-size:.062in}
+.half .foot .reach b{font-size:.085in}
+
+@page{size:letter;margin:0}
+@media print{
+  body{background:#fff}
+  .toolbar{display:none}
+  .sheet{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  .sheet:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+
+
+</head>
+<body>
+<div class="toolbar">
+  <h1>Raider Kickball print kit</h1>
+  <p><b>Sheet 1</b> is a full-page poster for doors, the cafeteria and the gym. <b>Sheet 2</b> is two half-page handouts on one sheet &mdash; print, cut on the dashed line, stack them on your table.</p>
+  <p>To print: hit the button, then set <b>Margins: None</b> and turn on <b>Background graphics</b>. Same settings to save a PDF for the print shop.</p>
+  <button class="go" type="button" onclick="window.print()">Print both sheets</button>
+  <p class="qrtarget">Both QR codes point to <code id="qr-url"></code> &mdash; check this is the address you want before you print a stack.</p>
+</div>
+
+<!-- ============ SHEET 1 ============ -->
+<div class="sheet full">
+  <div class="pad" style="display:flex;flex-direction:column;flex:1">
+    <div class="top">
+      <img class="mark" src="raiders.png" alt="Andrews High School Red Raiders">
+      <div class="who">
+        <b>Andrews High School</b>
+        <span>Red Raiders</span>
+      </div>
+      <div class="pres">TWA Centennial Scholars</div>
+    </div>
+
+    <div class="title">
+      <div class="t-sm">Raider</div>
+      <div class="t-big">Kickball</div>
+      <div class="t-script">Classic</div>
+    </div>
+
+    <dl class="band">
+      <div><dt>Game day</dt><dd>Sat &middot; Oct 10</dd></div>
+      <div><dt>First kick</dt><dd>1:00 &ndash; 7:00 PM</dd></div>
+      <div><dt>The field</dt><dd>Baseball Field</dd></div>
+    </dl>
+
+    <div class="scan">
+      <div class="qr" id="qr-full"></div>
+      <div class="scan-copy">
+        <div class="kicker">Scan to<br>sign up</div>
+        <p>Rules, teams, times and the sign-up form are all behind this code.</p>
+        <div class="due">Register by Fri, Oct 2</div>
+      </div>
+    </div>
+
+    <div class="money">
+      <div class="price"><b>$10</b><span>To play &middot; paid by Oct 2</span></div>
+      <div class="price"><b>$5</b><span>To watch &middot; pay at the lot</span></div>
+    </div>
+
+    <ul class="facts">
+      <li><b>First 100 players, then a waitlist.</b> Eight teams, each with a color to wear head to toe.</li>
+      <li><b>Pay by Oct 2 or lose your spot</b> &mdash; online or at our table, never at the gate.</li>
+      <li><b>Bring up to 3 friends.</b> Request them when you sign up and we keep you together.</li>
+      <li><b>Food, music and games</b> run all six hours out in the back parking lot.</li>
+    </ul>
+  </div>
+
+  <div class="foot">
+    <img src="scholars.png" alt="Centennial Scholars">
+    <div class="give">Every dollar funds the <em>Christmas Giveaway</em></div>
+    <div class="reach">
+      <b>@twacentennial_scholars</b>
+      orders@centennialprintz.com
+    </div>
+  </div>
+</div>
+
+<!-- ============ SHEET 2 ============ -->
+<div class="sheet halves">
+  <div class="half">
+    <div class="pad" style="display:flex;flex-direction:column;flex:1">
+      <div class="top">
+        <img class="mark" src="raiders.png" alt="Andrews High School Red Raiders">
+        <div class="who"><b>Andrews High School</b><span>Red Raiders</span></div>
+        <div class="pres">TWA Centennial Scholars</div>
+      </div>
+      <div class="title">
+        <div class="t-sm">Raider</div>
+        <div class="t-big">Kickball</div>
+        <div class="t-script">Classic</div>
+      </div>
+      <dl class="band">
+        <div><dt>Game day</dt><dd>Sat &middot; Oct 10</dd></div>
+        <div><dt>First kick</dt><dd>1:00 &ndash; 7:00 PM</dd></div>
+        <div><dt>The field</dt><dd>Baseball Field</dd></div>
+      </dl>
+      <div class="scan">
+        <div class="qr" id="qr-half-1"></div>
+        <div class="scan-copy">
+          <div class="kicker">Scan to sign up</div>
+          <p>Rules, teams and the form are all behind the code.</p>
+          <div class="due">Register by Fri, Oct 2</div>
+          <div class="half-prices"><span>$10 play</span><span>$5 watch</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <img src="scholars.png" alt="Centennial Scholars">
+      <div class="give">Every dollar funds the <em>Christmas Giveaway</em></div>
+      <div class="reach"><b>@twacentennial_scholars</b>orders@centennialprintz.com</div>
+    </div>
+  </div>
+
+  <div class="cutline"></div>
+  <div class="cutmark">cut here</div>
+
+  <div class="half">
+    <div class="pad" style="display:flex;flex-direction:column;flex:1">
+      <div class="top">
+        <img class="mark" src="raiders.png" alt="Andrews High School Red Raiders">
+        <div class="who"><b>Andrews High School</b><span>Red Raiders</span></div>
+        <div class="pres">TWA Centennial Scholars</div>
+      </div>
+      <div class="title">
+        <div class="t-sm">Raider</div>
+        <div class="t-big">Kickball</div>
+        <div class="t-script">Classic</div>
+      </div>
+      <dl class="band">
+        <div><dt>Game day</dt><dd>Sat &middot; Oct 10</dd></div>
+        <div><dt>First kick</dt><dd>1:00 &ndash; 7:00 PM</dd></div>
+        <div><dt>The field</dt><dd>Baseball Field</dd></div>
+      </dl>
+      <div class="scan">
+        <div class="qr" id="qr-half-2"></div>
+        <div class="scan-copy">
+          <div class="kicker">Scan to sign up</div>
+          <p>Rules, teams and the form are all behind the code.</p>
+          <div class="due">Register by Fri, Oct 2</div>
+          <div class="half-prices"><span>$10 play</span><span>$5 watch</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <img src="scholars.png" alt="Centennial Scholars">
+      <div class="give">Every dollar funds the <em>Christmas Giveaway</em></div>
+      <div class="reach"><b>@twacentennial_scholars</b>orders@centennialprintz.com</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var URL_TO_ENCODE = "https://claude.ai/code/artifact/79745a2c-795c-4b63-91ae-ade6c8483388";
+  function draw(id, px){
+    var el = document.getElementById(id);
+    if (!el || typeof QRCode === 'undefined') return;
+    new QRCode(el, {
+      text: URL_TO_ENCODE,
+      width: px, height: px,
+      colorDark: "#000000", colorLight: "#FFFFFF",
+      correctLevel: QRCode.CorrectLevel.Q
+    });
+  }
+  draw('qr-full', 900);
+  draw('qr-half-1', 600);
+  draw('qr-half-2', 600);
+  var lbl = document.getElementById('qr-url');
+  if (lbl) lbl.textContent = URL_TO_ENCODE;
+})();
+</script>
+
+</body>
+</html>

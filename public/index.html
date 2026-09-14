@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kickball tournament at Andrews High School, Saturday October 10, 1-7 PM. A TWA Centennial Scholars fundraiser for the Christmas Giveaway.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Raider Kickball Classic">
+<meta property="og:description" content="Kickball tournament at Andrews High School, Saturday October 10, 1-7 PM. A TWA Centennial Scholars fundraiser for the Christmas Giveaway.">
+<meta property="og:image" content="scholars.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="raiders.png">
+<title>Raider Kickball Classic</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Yellowtail&display=swap">
+<style>
+:root{
+  --ink:#000000;
+  --press:#0A0A0D;
+  --paper:#F4F3EF;
+  --red:#E32B22;
+  --red-deep:#9E1610;
+  --blue:#1D6FE0;
+  --blue-deep:#0F3E86;
+  --smoke:#969DAA;
+  --line:rgba(244,243,239,.13);
+  --line-hard:rgba(244,243,239,.26);
+  --display:"Anton","Arial Narrow",Impact,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --script:"Yellowtail","Brush Script MT",cursive;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --pad:clamp(18px,5vw,60px);
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;line-height:.92}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.halftone{
+  background-image:radial-gradient(circle,rgba(244,243,239,.10) 1px,transparent 1.2px);
+  background-size:7px 7px;
+}
+.eyebrow{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--smoke);
+}
+.eyebrow b{color:var(--red);font-weight:700}
+
+/* ---------------- TOP BAR ---------------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .inner{
+  max-width:var(--maxw);margin:0 auto;padding:9px var(--pad);
+  display:flex;align-items:center;gap:14px;
+}
+.topbar img{height:30px;width:auto;flex:none}
+.topbar .nm{font-family:var(--display);font-size:.95rem;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}
+.topbar .nm span{color:var(--red)}
+.topbar .spacer{flex:1}
+.chip{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--paper);border:1px solid var(--line-hard);padding:7px 11px;white-space:nowrap;
+}
+.chip em{font-style:normal;color:var(--red);font-weight:700}
+.btn{
+  font-family:var(--display);font-size:.95rem;letter-spacing:.05em;text-transform:uppercase;
+  padding:12px 22px;border:0;cursor:pointer;text-decoration:none;display:inline-flex;
+  align-items:center;gap:9px;transition:transform .14s ease,box-shadow .14s ease,background .14s ease;
+}
+.btn-red{background:var(--red);color:#fff;box-shadow:4px 4px 0 var(--red-deep)}
+.btn-red:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--red-deep)}
+.btn-red:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--red-deep)}
+.btn-line{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px var(--line-hard)}
+.btn-line:hover{box-shadow:inset 0 0 0 2px var(--paper)}
+.btn-sm{font-size:.82rem;padding:9px 16px}
+@media (max-width:780px){.topbar .nm,.topbar .chip{display:none}}
+
+/* ---------------- HERO ---------------- */
+.hero{position:relative;overflow:hidden;background:var(--ink);border-bottom:1px solid var(--line)}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(44vw 40vw at 76% 38%, rgba(29,111,224,.30), transparent 66%),
+    radial-gradient(40vw 38vw at 92% 72%, rgba(227,43,34,.28), transparent 64%),
+    radial-gradient(50vw 44vw at 4% 8%, rgba(227,43,34,.12), transparent 70%);
+}
+.hero-grid{
+  position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;padding:clamp(28px,5vw,56px) var(--pad) clamp(34px,5vw,60px);
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(16px,3vw,40px);align-items:center;
+}
+.hero-art{position:relative}
+.hero-art::before{
+  content:"";position:absolute;left:52%;top:44%;transform:translate(-50%,-50%);
+  width:72%;aspect-ratio:1/1;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(227,43,34,.50),rgba(29,111,224,.20) 54%,transparent 72%);
+  filter:blur(10px);
+}
+.hero-art img{
+  position:relative;z-index:1;
+  width:100%;height:auto;
+}
+.hero-copy{position:relative;z-index:3}
+
+.kicker{display:flex;align-items:center;gap:10px;margin-bottom:clamp(14px,2vw,20px);flex-wrap:wrap}
+.kicker img{height:44px;width:auto}
+.kicker .k-t{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);line-height:1.6}
+.kicker .k-t b{display:block;color:var(--paper);font-size:.72rem;letter-spacing:.14em}
+
+.title{text-transform:uppercase;letter-spacing:.005em}
+.title .a{display:block;font-size:clamp(1.5rem,4.4vw,2.7rem);color:var(--blue);letter-spacing:.16em}
+.title .b{
+  display:block;font-size:clamp(3.6rem,13vw,8.6rem);color:var(--paper);
+  letter-spacing:-.005em;line-height:.8;
+  text-shadow:5px 5px 0 var(--red), 0 0 52px rgba(227,43,34,.40);
+}
+.title .c{
+  font-family:var(--script);text-transform:none;color:var(--red);
+  font-size:clamp(1.7rem,5.2vw,3.1rem);display:inline-block;transform:rotate(-4deg);
+  margin:clamp(6px,1.4vw,12px) 0 0 .1em;line-height:1;
+}
+.lede{margin-top:clamp(16px,2.4vw,24px);max-width:46ch;color:#D2D5DC;font-size:clamp(1rem,1.7vw,1.14rem)}
+.lede b{color:var(--paper);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:clamp(20px,3vw,30px)}
+
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,auto);gap:clamp(14px,3vw,34px);
+  margin-top:clamp(22px,3vw,32px);padding-top:clamp(16px,2.4vw,22px);
+  border-top:1px solid var(--line);justify-content:start;
+}
+.hstat b{display:block;font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1;color:var(--paper)}
+.hstat span{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-top:6px}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;padding-top:22px}
+  .hero-art{order:-1;max-width:330px;margin:0 auto}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:12px}
+}
+
+/* ---------------- MARQUEE ---------------- */
+.marquee{
+  background:var(--red);color:#fff;overflow:hidden;
+  border-top:3px solid #fff;border-bottom:3px solid #fff;
+}
+.mq-track{display:flex;width:max-content;animation:mq 30s linear infinite}
+.mq-track span{
+  font-family:var(--display);font-size:clamp(.95rem,2vw,1.3rem);letter-spacing:.07em;
+  text-transform:uppercase;padding:11px 0;white-space:nowrap;
+}
+.mq-track i{font-style:normal;padding:0 .7em;color:rgba(255,255,255,.6)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------------- SECTIONS ---------------- */
+section{position:relative;padding:clamp(52px,8vw,104px) 0}
+.sec-alt{background:var(--press);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:clamp(24px,3.4vw,40px)}
+.sec-head h2{font-size:clamp(1.9rem,5.6vw,3.4rem);text-transform:uppercase;letter-spacing:.005em}
+.sec-head h2 span{color:var(--red)}
+.sec-head .sub{color:var(--smoke);font-size:.94rem;max-width:40ch;margin-bottom:6px}
+.regmark{width:26px;height:14px;position:relative;flex:none;margin-bottom:11px}
+.regmark::before,.regmark::after{content:"";position:absolute;top:1px;width:12px;height:12px;transform:rotate(45deg)}
+.regmark::before{left:0;background:var(--red);box-shadow:0 0 14px rgba(227,43,34,.75)}
+.regmark::after{right:0;background:var(--blue);box-shadow:0 0 14px rgba(29,111,224,.7)}
+
+/* job ticket */
+.ticket{
+  border:2px solid var(--paper);background:var(--ink);
+  display:grid;grid-template-columns:repeat(3,1fr);
+}
+.ticket .cell{padding:clamp(16px,2.4vw,24px);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ticket .cell:nth-child(3n){border-right:0}
+.ticket .cell:nth-last-child(-n+3){border-bottom:0}
+.ticket dt{font-family:var(--mono);font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);margin-bottom:8px}
+.ticket dd{margin:0;font-family:var(--display);font-size:clamp(1.15rem,2.6vw,1.6rem);text-transform:uppercase;line-height:1.05}
+.ticket dd small{display:block;font-family:var(--body);font-size:.82rem;font-weight:500;text-transform:none;color:var(--smoke);margin-top:7px;letter-spacing:0;line-height:1.45}
+.ticket dd small b{color:var(--paper);font-weight:700}
+.ticket .hot dd{color:var(--red)}
+@media (max-width:820px){.ticket{grid-template-columns:1fr 1fr}.ticket .cell:nth-child(3n){border-right:1px solid var(--line)}.ticket .cell:nth-child(2n){border-right:0}}
+@media (max-width:520px){.ticket{grid-template-columns:1fr}.ticket .cell{border-right:0!important}}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.stp{background:var(--press);padding:clamp(20px,2.6vw,28px);display:flex;flex-direction:column;gap:10px}
+.stp .n{
+  font-family:var(--display);font-size:2.4rem;line-height:1;color:transparent;
+  -webkit-text-stroke:2px var(--blue);font-variant-numeric:tabular-nums;
+}
+.stp h3{font-size:1.22rem;text-transform:uppercase;letter-spacing:.01em}
+.stp p{color:#B8BDC7;font-size:.92rem}
+.stp p b{color:var(--paper);font-weight:700}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* giveaway */
+.give{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,4vw,50px);align-items:center}
+.give-art{background:var(--ink);border:1px solid var(--line)}
+.give-art img{width:100%}
+.give h2{font-size:clamp(1.9rem,5vw,3rem);text-transform:uppercase;margin-bottom:16px}
+.give h2 span{color:var(--red)}
+.give p{color:#C6CAD3;max-width:52ch}
+.give p + p{margin-top:14px}
+.give .big{
+  font-family:var(--display);font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--paper);
+  text-transform:uppercase;line-height:1.15;margin-top:20px;
+}
+.give .big em{font-style:normal;color:var(--red)}
+@media (max-width:820px){.give{grid-template-columns:1fr}.give-art{max-width:340px}}
+
+/* ---------------- ORDER FORM ---------------- */
+.order{
+  border:2px solid var(--paper);background:var(--press);
+  max-width:760px;margin:0 auto;
+}
+.order-head{
+  display:flex;align-items:center;gap:14px;padding:16px clamp(18px,3vw,30px);
+  border-bottom:2px dashed var(--line-hard);
+}
+.order-head img{height:34px;width:auto}
+.order-head .t{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;letter-spacing:.05em}
+.order-head .no{margin-left:auto;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;color:var(--smoke);text-align:right;line-height:1.7}
+.order-body{padding:clamp(20px,3vw,32px)}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.field label,.leg{font-family:var(--mono);font-size:.63rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke)}
+input,select{
+  font-family:var(--body);font-size:1rem;color:var(--paper);background:var(--ink);
+  border:1px solid var(--line-hard);border-radius:0;padding:13px 14px;width:100%;
+}
+input::placeholder{color:#5A606B}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row-flex{display:flex;flex-wrap:wrap;gap:16px}
+.row-flex > .field{flex:1 1 210px;min-width:0}
+fieldset{border:0;padding:0;margin:0 0 18px}
+.picks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.fullnote{
+  margin-top:10px;border:1px solid var(--red);background:rgba(227,43,34,.14);
+  padding:11px 14px;font-size:.9rem;font-weight:600;color:var(--paper);
+}
+.pick{position:relative}
+.pick input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.pick span{
+  display:flex;flex-direction:column;gap:3px;padding:15px 16px;cursor:pointer;
+  border:1px solid var(--line-hard);background:var(--ink);
+}
+.pick b{font-family:var(--display);font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em}
+.pick small{color:var(--smoke);font-size:.78rem}
+.pick input:checked + span{border-color:var(--red);background:rgba(227,43,34,.15);box-shadow:inset 0 0 0 1px var(--red)}
+.pick input:focus-visible + span{outline:3px solid var(--blue);outline-offset:2px}
+.friends{display:grid;gap:10px;margin-top:10px}
+.hint{color:var(--smoke);font-size:.83rem;margin-top:8px}
+.hint a{color:var(--red)}
+.hide-bot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:8px 0}
+.done-tick{
+  width:52px;height:52px;display:grid;place-items:center;flex:none;
+  background:var(--red);color:#fff;font-size:1.7rem;line-height:1;
+  box-shadow:4px 4px 0 var(--red-deep);
+}
+.done h3{font-size:clamp(1.6rem,4.4vw,2.4rem);text-transform:uppercase}
+.done > p{color:#D2D5DC;max-width:52ch}
+.done-next{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;width:100%;
+  padding:16px 18px;border:1px solid var(--red);background:rgba(227,43,34,.10);
+}
+.done-next .paybox-note{flex:1 1 240px;margin:0}
+.paybox{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  margin-top:22px;padding:16px 18px;
+  border:1px solid var(--red);background:rgba(227,43,34,.10);
+}
+.paybox > div{flex:1 1 240px;min-width:0}
+.paybox-note{color:#D2D5DC;font-size:.88rem;margin-top:6px}
+.stp .pay-btn{align-self:flex-start;margin-top:4px}
+.form-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+.status{font-size:.86rem;color:var(--blue);min-height:1.3em;flex-basis:100%;font-weight:600}
+
+/* ---------------- FOOTER ---------------- */
+footer{background:var(--ink);border-top:1px solid var(--line);padding:clamp(40px,6vw,70px) 0 60px}
+.f-top{display:flex;align-items:center;gap:clamp(16px,3vw,34px);flex-wrap:wrap;margin-bottom:30px}
+.f-top img.a{height:70px;width:auto}
+.f-top img.cp{height:86px;width:auto}
+.f-top .f-t{font-family:var(--display);font-size:clamp(1.3rem,3.2vw,2rem);text-transform:uppercase;line-height:1.05}
+.f-top .f-t span{color:var(--red)}
+.contacts{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;margin-bottom:22px}
+.contacts a{font-family:var(--display);font-size:1.05rem;text-decoration:none;border-bottom:3px solid var(--red);padding-bottom:2px;letter-spacing:.02em}
+.contacts a:hover{color:var(--red)}
+.fine{color:var(--smoke);font-size:.82rem;max-width:70ch;font-family:var(--mono);line-height:1.8;letter-spacing:.02em}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+
+
+</head>
+<body>
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="inner">
+    <img src="raiders.png" alt="Andrews High School Red Raiders">
+    <div class="nm">Raider <span>Kickball</span></div>
+    <div class="spacer"></div>
+    <div class="chip" id="chip-deadline">Sign up by <em>Oct 2</em></div>
+    <a class="btn btn-red btn-sm" href="#signup">Sign up</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero halftone">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="kicker">
+        <img src="raiders.png" alt="">
+        <div class="k-t">
+          <b>Andrews High School</b>
+          TWA Centennial Scholars
+        </div>
+      </div>
+
+      <h1 class="title">
+        <span class="a">Raider</span>
+        <span class="b">Kickball</span>
+      </h1>
+      <div class="title"><span class="c">Classic</span></div>
+
+      <p class="lede">One diamond. <b>Eight teams. Six hours.</b> Kickball on the field, food and music in the back lot &mdash; and every dollar goes straight to the <b>Centennial Scholars Christmas Giveaway.</b></p>
+
+      <div class="hero-cta">
+        <a class="btn btn-red" href="#signup">Get on a team</a>
+        <a class="btn btn-line" href="#ticket">See the details</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat"><b id="stat-days">&mdash;</b><span>Days to sign up</span></div>
+        <div class="hstat"><b id="stat-spots">100</b><span id="stat-spots-label">Spots, first come</span></div>
+        <div class="hstat"><b>$10</b><span>To play</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img src="scholars.png" alt="Centennial Scholars" fetchpriority="high">
+    </div>
+  </div>
+</header>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track" id="mq"></div>
+</div>
+
+<!-- ============ GAME CARD ============ -->
+<section id="ticket">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="regmark"></span>
+      <h2>The game <span>card</span></h2>
+      <p class="sub">Everything about the day on one card.</p>
+    </div>
+
+    <dl class="ticket">
+      <div class="cell"><dt>Game day</dt><dd>Sat &middot; Oct 10<small>2026. Rain or shine unless we post otherwise.</small></dd></div>
+      <div class="cell"><dt>First kick</dt><dd>1:00 &ndash; 7:00 PM<small>Kicks off at 1:00. Get there early to find your team.</small></dd></div>
+      <div class="cell"><dt>The field</dt><dd>Baseball Field<small>Andrews High School. Food, music and games run out of the back parking lot.</small></dd></div>
+      <div class="cell"><dt>The bracket</dt><dd id="bracket-dd">First 100<small id="bracket-note">First come, first served. Eight teams, and rosters do not have to come out exactly even.</small></dd></div>
+      <div class="cell"><dt>The price</dt><dd>$10 / $5<small><b>Players pay by Oct 2</b> &mdash; online or at our table during school. No paying at the gate to play. Spectators pay $5 at the lot on game day.</small></dd></div>
+      <div class="cell hot"><dt>Deadline</dt><dd>Fri &middot; Oct 2<small><b>Unpaid spots are released.</b> Registration closes, anyone who has not paid loses their spot, and those spots go down the waitlist in order.</small></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section class="sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="regmark"></span>
+      <h2>Four <span>steps</span></h2>
+      <p class="sub">From your phone to the first kick.</p>
+    </div>
+    <div class="steps">
+      <div class="stp">
+        <div class="n">01</div>
+        <h3>Sign up</h3>
+        <p>Name, grade, and up to three friends you want on your team. Takes about a minute &mdash; first 100 players get on the field.</p>
+      </div>
+      <div class="stp">
+        <div class="n">02</div>
+        <h3>Pay $10 by Oct 2</h3>
+        <p>Pay with <span class="pay-words">Cash App</span> online, or cash at the Centennial Scholars table during school. <b>Signing up does not hold your spot &mdash; paying does.</b> Miss Oct 2 and your spot goes to the next person in line.</p>
+        <a class="btn btn-red btn-sm pay-btn" href="#" hidden>Pay $10 online</a>
+      </div>
+      <div class="stp">
+        <div class="n">03</div>
+        <h3>Get your color</h3>
+        <p>After Oct 2 we build eight teams and assign each one a color. Yours comes to you before game day.</p>
+      </div>
+      <div class="stp">
+        <div class="n">04</div>
+        <h3>Wear it loud</h3>
+        <p>Head to toe in your color. Best-dressed team gets called out at the lot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIVEAWAY ============ -->
+<section>
+  <div class="wrap">
+    <div class="give">
+      <div class="give-art"><img src="scholars.png" alt="Centennial Scholars" loading="lazy"></div>
+      <div>
+        <p class="eyebrow"><b>&#9670;</b> Where the money goes</p>
+        <h2 style="margin-top:12px">The Christmas <span>Giveaway</span></h2>
+        <p>Every registration and every spectator ticket funds the Centennial Scholars Christmas Giveaway. That is the entire point of the day. You are not buying a game &mdash; you are buying somebody a Christmas.</p>
+        <p>The Centennial Scholars put this whole day together themselves &mdash; the field, the teams, the lot, the music. Six hours of kickball so a family they will never meet has something under the tree.</p>
+        <p class="big">100 spots at $10 a head. <em>Fill the field.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER FORM ============ -->
+<section id="signup" class="sec-alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="regmark"></span>
+      <h2>Get on a <span>team</span></h2>
+      <p class="sub">One minute. Closes Friday, October 2.</p>
+    </div>
+
+    <div class="order">
+      <div class="order-head">
+        <img src="raiders.png" alt="">
+        <div class="t">Registration</div>
+        <div class="no">Raider Kickball Classic<br>Oct 10 &middot; 1&ndash;7 PM</div>
+      </div>
+      <div class="order-body">
+
+        <div class="done" id="done" hidden>
+          <div class="done-tick" aria-hidden="true">&#10003;</div>
+          <h3 id="done-title">You are in</h3>
+          <p id="done-msg">We have got your registration.</p>
+          <div class="done-next" id="done-next" hidden>
+            <p class="paybox-note"><b>One thing left.</b> Your $10 is what holds the spot &mdash; pay it by Oct 2 or it goes to the next person in line. Put your full name in the payment note.</p>
+            <a class="btn btn-red pay-btn" href="#">Pay $10 online</a>
+          </div>
+          <button class="btn btn-line" type="button" id="another">Sign up someone else</button>
+        </div>
+
+        <form id="reg" novalidate="false">
+          <p class="hide-bot" aria-hidden="true"><label>Leave this empty: <input id="company" tabindex="-1" autocomplete="off"></label></p>
+          <fieldset>
+            <p class="leg">I am coming to</p>
+            <p class="fullnote" id="full-banner" hidden>All 100 player spots are gone. You can still come watch, or put your name on the waitlist.</p>
+            <div class="picks">
+              <label class="pick" id="pick-play"><input type="radio" name="role" value="Play" checked>
+                <span><b>Play &mdash; $10</b><small>Andrews students only</small></span></label>
+              <label class="pick"><input type="radio" name="role" value="Watch">
+                <span><b>Watch &mdash; $5</b><small>Everyone welcome &middot; pay at the lot</small></span></label>
+              <label class="pick" id="pick-wait" hidden><input type="radio" name="role" value="Waitlist">
+                <span><b>Waitlist &mdash; free</b><small>Nothing owed unless a spot opens</small></span></label>
+            </div>
+            <p class="hint" id="wait-note" hidden>Spots open on Oct 2 when unpaid players drop, and we work down the waitlist in order. You pay nothing unless you get one.</p>
+          </fieldset>
+
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" required placeholder="First and last">
+            </div>
+            <div class="field">
+              <label for="contact">Phone or email</label>
+              <input id="contact" name="contact" required placeholder="So we can send your team color">
+            </div>
+          </div>
+
+          <div class="row-flex">
+            <div class="field" id="grade-field">
+              <label for="grade">Grade</label>
+              <select id="grade" name="grade">
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+              </select>
+            </div>
+            <div class="field" id="pay-field">
+              <label for="pay">How you are paying by Oct 2</label>
+              <select id="pay" name="pay">
+                <option>Cash App</option>
+                <option>Cash at the school table</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" id="party-field" hidden>
+            <label for="party">How many are coming with you?</label>
+            <input id="party" name="party" placeholder="Just me / 2 / 4">
+          </div>
+
+          <fieldset id="friends-set">
+            <p class="leg">Friends you want on your team &mdash; up to 3</p>
+            <div class="friends">
+              <input id="f1" placeholder="Friend 1 (optional)">
+              <input id="f2" placeholder="Friend 2 (optional)">
+              <input id="f3" placeholder="Friend 3 (optional)">
+            </div>
+            <p class="hint">Teams do not have to be exactly the same size, so we can usually keep friend requests together.</p>
+          </fieldset>
+
+          <div class="paybox" id="paybox" hidden>
+            <div>
+              <p class="leg">Then lock it in</p>
+              <p class="paybox-note">Your $10 is what holds the spot. Pay it now and you are done. <b>Put your full name in the note</b> so we know whose $10 it is.</p>
+            </div>
+            <a class="btn btn-red pay-btn" href="#">Pay $10 online</a>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-red" type="submit" id="submit-btn">Send it in</button>
+            <p class="status" id="status"></p>
+          </div>
+          <p class="hint">Takes one second and goes straight to the Centennial Scholars. Rather do it face to face? Come find us at our table during school.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <img class="a" src="raiders.png" alt="Andrews High School Red Raiders">
+      <div class="f-t">Raider Kickball <span>Classic</span></div>
+      <img class="cp" src="scholars.png" alt="Centennial Scholars" loading="lazy" style="margin-left:auto">
+    </div>
+    <div class="contacts">
+      <a href="https://instagram.com/twacentennial_scholars">@twacentennial_scholars</a>
+      <a href="mailto:orders@centennialprintz.com">orders@centennialprintz.com</a>
+    </div>
+    <p class="fine">Saturday, October 10, 2026 &middot; 1:00&ndash;7:00 PM &middot; Andrews High School baseball field &middot; Registration closes Friday, October 2 &middot; A TWA Centennial Scholars fundraiser for the Christmas Giveaway.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* The page asks the server how many spots are gone and flips itself to
+     waitlist-only when the cap is hit — no manual switch to remember. */
+  var SPOTS_FULL = false;
+
+  /* =====================================================================
+     ONLINE PAYMENT for the $10 player entry.
+     Empty PAY_LINK hides the pay buttons entirely.
+     When the Stripe link arrives, swap PAY_LINK for the buy.stripe.com
+     URL and change PAY_WORDS to 'card or Cash App' — nothing else.
+     ===================================================================== */
+  var PAY_LINK  = 'https://cash.app/$centennialscholars/10';
+  var PAY_WORDS = 'Cash App';
+  var PAY_LABEL = 'Pay $10 on Cash App';
+
+  /* ---------- marquee ---------- */
+  var bits = ['Sat Oct 10','1:00 &ndash; 7:00 PM','Andrews HS Baseball Field',
+    SPOTS_FULL ? 'Player spots FULL' : '$10 to play',
+    '$5 to watch',
+    SPOTS_FULL ? 'Waitlist open' : 'First 100 players',
+    'Sign up by Oct 2'];
+  var run = bits.map(function(b){ return b + '<i>&#9670;</i>'; }).join('');
+  var mq = document.getElementById('mq');
+  mq.innerHTML = '<span>' + run + '</span><span>' + run + '</span>';
+
+  /* ---------- countdown ---------- */
+  var close = new Date(2026, 9, 2, 23, 59, 59);
+  var left = Math.ceil((close - new Date()) / 86400000);
+  var statDays = document.getElementById('stat-days');
+  var chip = document.getElementById('chip-deadline');
+  if (left > 0) {
+    statDays.textContent = left;
+    chip.innerHTML = left + ' day' + (left === 1 ? '' : 's') + ' left &mdash; closes <em>Oct 2</em>';
+  } else {
+    statDays.textContent = '0';
+    statDays.style.color = '#969DAA';
+    chip.innerHTML = 'Registration <em>closed</em>';
+  }
+
+  /* ---------- full / waitlist state ---------- */
+  function applyFull(){
+    SPOTS_FULL = true;
+    document.getElementById('stat-spots').textContent = 'Full';
+    document.getElementById('stat-spots-label').textContent = 'Player spots gone';
+    document.getElementById('bracket-dd').childNodes[0].nodeValue = 'Full';
+    document.getElementById('bracket-note').innerHTML =
+      '<b>All 100 player spots are taken.</b> The waitlist is open &mdash; spots come back on Oct 2 when unpaid players drop.';
+    document.getElementById('full-banner').hidden = false;
+    document.getElementById('pick-play').hidden = true;
+    document.getElementById('pick-wait').hidden = false;
+    document.getElementById('wait-note').hidden = false;
+    var playRadio = document.querySelector('input[name=role][value=Play]');
+    if (playRadio && playRadio.checked) {
+      var watchRadio = document.querySelector('input[name=role][value=Watch]');
+      if (watchRadio) watchRadio.checked = true;
+    }
+    if (typeof syncRole === 'function') syncRole();
+  }
+
+  /* Live count from the server, so the page is never out of date. */
+  fetch('/api/stats', { cache: 'no-store' })
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(s){
+      if (!s) return;
+      if (s.full) { applyFull(); return; }
+      var spots = document.getElementById('stat-spots');
+      var label = document.getElementById('stat-spots-label');
+      if (spots && typeof s.spotsLeft === 'number') {
+        spots.textContent = s.spotsLeft;
+        label.textContent = s.spotsLeft === 1 ? 'Spot left' : 'Spots left';
+      }
+    })
+    .catch(function(){ /* keep the static copy if the count is unreachable */ });
+
+  /* ---------- online payment link ---------- */
+  if (PAY_LINK) {
+    Array.prototype.forEach.call(document.querySelectorAll('.pay-btn'), function(a){
+      a.href = PAY_LINK;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = PAY_LABEL;
+      a.hidden = false;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.pay-words'), function(el){
+      el.textContent = PAY_WORDS;
+    });
+  }
+
+  /* ---------- form ---------- */
+  var form = document.getElementById('reg');
+  var paybox = document.getElementById('paybox');
+  var statusEl = document.getElementById('status');
+  var gradeField = document.getElementById('grade-field');
+  var payField = document.getElementById('pay-field');
+  var friendsSet = document.getElementById('friends-set');
+  var partyField = document.getElementById('party-field');
+  var gradeSel = document.getElementById('grade');
+  var paySel = document.getElementById('pay');
+
+  function role(){ return form.querySelector('input[name=role]:checked').value; }
+  function syncRole(){
+    var r = role();
+    var onField = (r === 'Play' || r === 'Waitlist');
+    gradeField.hidden = !onField;
+    payField.hidden = r !== 'Play';
+    friendsSet.hidden = !onField;
+    partyField.hidden = r !== 'Watch';
+    paybox.hidden = !(PAY_LINK && r === 'Play');
+  }
+  Array.prototype.forEach.call(form.querySelectorAll('input[name=role]'), function(r){
+    r.addEventListener('change', syncRole);
+  });
+  syncRole();
+
+  /* Collect only the fields that apply to the chosen role, so a
+     waitlist entry never arrives carrying a payment method. */
+  function payload(){
+    var r = role();
+    var playing = r === 'Play';
+    var waiting = r === 'Waitlist';
+    var friends = ['f1','f2','f3'].map(function(id){
+      return document.getElementById(id).value.trim();
+    }).filter(Boolean).join(', ');
+
+    var data = {
+      role: playing ? 'play' : (waiting ? 'wait' : 'watch'),
+      name: document.getElementById('name').value.trim(),
+      contact: document.getElementById('contact').value.trim(),
+      grade: (playing || waiting) ? gradeSel.value : '',
+      intent: playing ? paySel.value : '',
+      friends: (playing || waiting) ? friends : '',
+      party: (r === 'Watch') ? document.getElementById('party').value.trim() : '',
+      company: document.getElementById('company').value
+    };
+
+    return { data: data, playing: playing, waiting: waiting };
+  }
+
+  function showDone(p, result){
+    var done = document.getElementById('done');
+    var first = (p.data.name || '').split(' ')[0];
+
+    // The server has the final say on role — it may have bumped a player
+    // to the waitlist if the last spot went while they were typing.
+    var role = (result && result.role) || p.data.role;
+    var playing = role === 'play';
+    var waiting = role === 'wait';
+
+    document.getElementById('done-title').textContent =
+      waiting ? 'You are on the list' : (playing ? 'You are in' : 'See you there');
+
+    var msg;
+    if (result && result.bumpedToWaitlist) {
+      msg = (first ? first + ', the' : 'The') + ' last player spot went while you were signing up, so you are on the waitlist. '
+          + 'Spots open on Oct 2 when unpaid players drop, and we work down the list in order.';
+    } else if (waiting) {
+      msg = (first ? first + ', we' : 'We') + ' have got you on the waitlist. If a spot opens on Oct 2 we will reach out on the contact you gave us.';
+    } else if (playing) {
+      msg = (first ? first + ', your' : 'Your') + ' registration is in. We will send your team color before game day.';
+    } else {
+      msg = 'Your name is down. Bring $5 to the back lot on game day and come loud.';
+    }
+    if (result && result.duplicate) {
+      msg = (first ? first + ', you' : 'You') + ' were already signed up, so nothing was doubled. You are good.';
+    }
+    document.getElementById('done-msg').textContent = msg;
+
+    // Tag the payment with the registration id so the webhook can match it
+    // to this exact person instead of guessing from a name.
+    var canPay = playing && PAY_LINK && !(result && result.paid);
+    if (canPay && result && result.id) {
+      Array.prototype.forEach.call(done.querySelectorAll('.pay-btn'), function(a){
+        var sep = PAY_LINK.indexOf('?') > -1 ? '&' : '?';
+        var url = PAY_LINK + sep + 'client_reference_id=' + encodeURIComponent(result.id);
+        var email = p.data.contact || '';
+        if (email.indexOf('@') > -1) url += '&prefilled_email=' + encodeURIComponent(email);
+        a.href = url;
+      });
+    }
+    document.getElementById('done-next').hidden = !canPay;
+
+    form.hidden = true;
+    done.hidden = false;
+    done.scrollIntoView({ block: 'center' });
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    var p = payload();
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    statusEl.textContent = '';
+
+    fetch('/api/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(p.data)
+    }).then(function(res){
+      return res.json().then(function(body){
+        if (!res.ok) throw new Error(body.error || 'That did not go through.');
+        return body;
+      });
+    }).then(function(result){
+      if (result.full) applyFull();
+      showDone(p, result);
+    }).catch(function(err){
+      btn.disabled = false;
+      btn.textContent = 'Try again';
+      statusEl.innerHTML = (err && err.message ? err.message : 'That did not go through.')
+        + ' Try once more, or DM us at '
+        + '<a href="https://instagram.com/twacentennial_scholars">@twacentennial_scholars</a> and we will add you by hand.';
+    });
+  });
+
+  document.getElementById('another').addEventListener('click', function(){
+    form.reset();
+    ['f1','f2','f3'].forEach(function(id){ document.getElementById(id).value = ''; });
+    syncRole();
+    document.getElementById('done').hidden = true;
+    form.hidden = false;
+    document.getElementById('submit-btn').disabled = false;
+    document.getElementById('submit-btn').textContent = 'Send it in';
+    statusEl.textContent = '';
+    document.getElementById('name').focus();
+  });
+})();
+</script>
+
+</body>
+</html>
